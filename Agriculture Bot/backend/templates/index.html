@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🌾 Smart Farming Assistant</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+
+<div class="background-animation"></div>
+
+<div class="main-container">
+
+    <div class="header">
+        <div class="header-title">🌾 Smart Farming Assistant</div>
+        <p>AI Powered Crop Recommendation System</p>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="card">
+            <div class="form-title">📊 Soil & Weather Data</div>
+            
+            <form class="input-form">
+                <!-- Soil Nutrients Section -->
+                <div class="form-section">
+                    <div class="section-label">🧬 Soil Nutrients (NPK)</div>
+                    <div class="input-row-3">
+                        <div class="input-wrapper">
+                            <label>Nitrogen (N)</label>
+                            <div class="input-box">
+                                <span class="input-icon">🌿</span>
+                                <input type="number" id="N" placeholder="0-150" step="0.1">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Phosphorus (P)</label>
+                            <div class="input-box">
+                                <span class="input-icon">🌱</span>
+                                <input type="number" id="P" placeholder="0-150" step="0.1">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Potassium (K)</label>
+                            <div class="input-box">
+                                <span class="input-icon">🌾</span>
+                                <input type="number" id="K" placeholder="0-250" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Environmental Section -->
+                <div class="form-section">
+                    <div class="section-label">🌍 Environmental Factors</div>
+                    <div class="input-row-2">
+                        <div class="input-wrapper">
+                            <label>Temperature (°C)</label>
+                            <div class="input-box">
+                                <span class="input-icon">🌡</span>
+                                <input type="number" id="temperature" placeholder="10-50" step="0.1">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Humidity (%)</label>
+                            <div class="input-box">
+                                <span class="input-icon">💧</span>
+                                <input type="number" id="humidity" placeholder="0-100" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soil & Rainfall Section -->
+                <div class="form-section">
+                    <div class="section-label">🧪 Soil & Water</div>
+                    <div class="input-row-2">
+                        <div class="input-wrapper">
+                            <label>pH Value</label>
+                            <div class="input-box">
+                                <span class="input-icon">🧪</span>
+                                <input type="number" id="ph" placeholder="3-10" step="0.1">
+                            </div>
+                        </div>
+                        <div class="input-wrapper">
+                            <label>Rainfall (mm)</label>
+                            <div class="input-box">
+                                <span class="input-icon">🌧</span>
+                                <input type="number" id="rainfall" placeholder="0-300" step="0.1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <button class="recommend-btn" onclick="sendData()">
+                <span class="btn-icon">🌱</span>
+                Get Smart Recommendation
+            </button>
+
+            <div class="result-box" id="resultBox"></div>
+            
+            <button class="clear-btn" onclick="clearHistory()" style="display:none;" id="clearBtn">
+                <span class="btn-icon">🗑</span>
+                Clear History
+            </button>
+
+        </div>
+
+        <div class="chart-container" id="chartContainer" style="display:none;">
+            <h3>📊 Recommendation Distribution</h3>
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>
